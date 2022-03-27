@@ -22,5 +22,31 @@ const Shop = () => {
         }
         
     };
-}
+    return (
+        <div className='shop-container'>
+            <div className="products-container">
+                {
+                    products.map(product=><Product 
+                        key={product.id}
+                        product={product}
+                        handleAddToCart={handleAddToCart}
+                        ></Product>)
+                }
+            </div>
+            <div className="cart-container">
+                
+                <h4>Order Summary</h4>
+                {
+                    cart.map((carts)=>(
+
+                    <ul key={carts.id}><li >{carts.name}</li></ul>))
+                }
+               
+                <button ><h4>Choose 1 For me</h4></button><br />
+                <button onClick={()=> setCart([])}><h4>Choose Again</h4></button>
+            </div>
+        </div>
+    );
+};
+
 export default Shop;
