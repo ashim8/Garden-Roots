@@ -14,3 +14,8 @@
 .cart-container{
     background-color: rgba(255, 153, 0, 0.3);
 }
+@media screen and (max-width: 576px) {
+    .products-container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
